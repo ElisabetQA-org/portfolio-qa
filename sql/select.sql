@@ -1,3 +1,5 @@
-Consultar todos los datos.
+-- Consultar todos los datos.
 SELECT * FROM formportfolio;
+
+
 
