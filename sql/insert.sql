@@ -5,7 +5,7 @@ VALUES
 ('maria', 'maria@yahoo.com', 25, 'otros', 'mensaje de prueba'),
 ('ana', 'ana.work@gmail.com', 30, 'oferta de trabajo', 'test message'),
 (null, 'user1@gmail.com', 22, 'information', 'mensaje testing'),
-(pedro', 'pedro@test.com', 35, 'otros', 'test mensaje largo'),
+('pedro', 'pedro@test.com', 35, 'otros', 'test mensaje largo'),
 ('juan', 'juan@gmail.com', null, 'oferta de trabajo', 'hola qa testing')
 ('ana', 'ana.test@mail.com', 28, 'informacion', 'mensaje con test'),
 (null, 'contact@gmail.com', 40, 'oferta de trabajo', 'test email gmail'),
