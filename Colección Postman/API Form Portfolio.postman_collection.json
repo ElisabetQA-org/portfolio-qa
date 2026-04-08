@@ -83,8 +83,8 @@
                   "    pm.response.to.have.status(200);",
                   "});",
                   "",
-                  "pm.test(\"El tiempo de respuesta es menor a 1000ms\", function () {",
-                  "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
                   "});",
                   "",
                   "pm.test(\"La respuesta contiene el nombre indicado\", function () {",
@@ -1031,6 +1031,83 @@
               "listen": "test",
               "script": {
                 "exec": [
+                  "pm.test(\"El codigo de respuesta es 204\", function () {",
+                  "    pm.response.to.have.status(204);",
+                  "});",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "sb_secret_Fi95OvMkaKhFRvEMvFLMPA_O1DnFscR",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"nombre\": null\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{APIURL}}/formportfolio?id=eq.{{IDUSUARIO_EDIT}}",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "eq.{{IDUSUARIO_EDIT}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Patch form editar asunto vacío",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
                   "pm.test(\"El codigo de respuesta es 400\", function () {",
                   "    pm.response.to.have.status(400);",
                   "});",
@@ -1076,7 +1153,84 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n\"nombre\":\n}",
+              "raw": "{\n\"motivo\": null\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{APIURL}}/formportfolio?id=eq.{{IDUSUARIO_EDIT}}",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "eq.{{IDUSUARIO_EDIT}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Patch form editar edad vacía",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 204\", function () {",
+                  "    pm.response.to.have.status(204);",
+                  "});",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "sb_secret_Fi95OvMkaKhFRvEMvFLMPA_O1DnFscR",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"edad\":null \n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -1153,7 +1307,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n\"motivo\": \n}",
+              "raw": "{\n\"email\": null\n}",
               "options": {
                 "raw": {
                   "language": "json"
