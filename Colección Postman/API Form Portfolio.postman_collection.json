@@ -1,0 +1,2197 @@
+{
+  "info": {
+    "_postman_id": "d1c2c844-971d-4662-b883-048a5477d8ae",
+    "name": "API Form Portfolio",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53495488",
+    "_collection_link": "https://go.postman.co/collection/53495488-d1c2c844-971d-4662-b883-048a5477d8ae?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get form",
+      "item": [
+        {
+          "name": "Get form",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "sb_secret_Fi95OvMkaKhFRvEMvFLMPA_O1DnFscR",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{APIURL}}/formportfolio",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get form nombre válido",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"El tiempo de respuesta es menor a 1000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                  "});",
+                  "",
+                  "pm.test(\"La respuesta contiene el nombre indicado\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    var nombre = pm.environment.get(\"NOMBREUSUARIO\")",
+                  "    pm.expect(jsonData[0].nombre).to.eql(nombre);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "sb_secret_Fi95OvMkaKhFRvEMvFLMPA_O1DnFscR",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{APIURL}}/formportfolio?nombre=eq.{{NOMBREUSUARIO}}",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ],
+              "query": [
+                {
+                  "key": "nombre",
+                  "value": "eq.{{NOMBREUSUARIO}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get form asunto válido",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  "",
+                  "pm.test(\"La respuesta contiene el motivo indicado\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    var motivo = pm.environment.get(\"MOTIVOUSUARIO\")",
+                  "    pm.expect(jsonData[0].motivo).to.eql(motivo);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "sb_secret_Fi95OvMkaKhFRvEMvFLMPA_O1DnFscR",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{APIURL}}/formportfolio?motivo=eq.{{MOTIVOUSUARIO}}",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ],
+              "query": [
+                {
+                  "key": "motivo",
+                  "value": "eq.{{MOTIVOUSUARIO}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get form edad válida",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  "",
+                  "pm.test(\"La respuesta contiene la edad indicada\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    var edad = parseInt(pm.environment.get(\"EDADUSUARIO\"))",
+                  "    pm.expect(jsonData[0].edad).to.eql(edad);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "sb_secret_Fi95OvMkaKhFRvEMvFLMPA_O1DnFscR",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{APIURL}}/formportfolio?edad=eq.{{EDADUSUARIO}}",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ],
+              "query": [
+                {
+                  "key": "edad",
+                  "value": "eq.{{EDADUSUARIO}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get form email válido",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  "",
+                  "pm.test(\"La respuesta contiene el email indicado\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    var email = pm.environment.get(\"EMAILUSUARIO\")",
+                  "    pm.expect(jsonData[0].email).to.eql(email);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "sb_secret_Fi95OvMkaKhFRvEMvFLMPA_O1DnFscR",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{APIURL}}/formportfolio?email=eq.{{EMAILUSUARIO}}",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ],
+              "query": [
+                {
+                  "key": "email",
+                  "value": "eq.{{EMAILUSUARIO}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get form sin autenticación",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es no autorizado 401\", function () {",
+                  "    pm.response.to.have.status(401);",
+                  "});",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{APIURL}}/formportfolio",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get form nombre que no existe",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "sb_secret_Fi95OvMkaKhFRvEMvFLMPA_O1DnFscR",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{APIURL}}/formportfolio?nombre=eq.{{NOMBRE_NOEXISTE}}",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ],
+              "query": [
+                {
+                  "key": "nombre",
+                  "value": "eq.{{NOMBRE_NOEXISTE}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get form asunto que no existe",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "sb_secret_Fi95OvMkaKhFRvEMvFLMPA_O1DnFscR",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{APIURL}}/formportfolio?motivo=eq.{{ASUNTO__NOEXISTE}}",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ],
+              "query": [
+                {
+                  "key": "motivo",
+                  "value": "eq.{{ASUNTO__NOEXISTE}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get form edad inválida",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 400\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "sb_secret_Fi95OvMkaKhFRvEMvFLMPA_O1DnFscR",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{APIURL}}/formportfolio?edad=eq.veinte",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ],
+              "query": [
+                {
+                  "key": "edad",
+                  "value": "eq.veinte"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get form email que no existe",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "sb_secret_Fi95OvMkaKhFRvEMvFLMPA_O1DnFscR",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{APIURL}}/formportfolio?email=eq.{{EMAIL_NOEXISTE}}",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ],
+              "query": [
+                {
+                  "key": "email",
+                  "value": "eq.{{EMAIL_NOEXISTE}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Patch folder",
+      "item": [
+        {
+          "name": "Patch form editar nombre válido",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 204\", function () {",
+                  "    pm.response.to.have.status(204);",
+                  "});",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "sb_secret_Fi95OvMkaKhFRvEMvFLMPA_O1DnFscR",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"nombre\": \"Test nombre\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{APIURL}}/formportfolio?id=eq.{{IDUSUARIO_EDIT}}",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "eq.{{IDUSUARIO_EDIT}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Patch form editar asunto válido",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 204\", function () {",
+                  "    pm.response.to.have.status(204);",
+                  "});",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "sb_secret_Fi95OvMkaKhFRvEMvFLMPA_O1DnFscR",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"motivo\": \"informacion\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{APIURL}}/formportfolio?id=eq.{{IDUSUARIO_EDIT}}",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "eq.{{IDUSUARIO_EDIT}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Patch form editar edad válida",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 204\", function () {",
+                  "    pm.response.to.have.status(204);",
+                  "});",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "sb_secret_Fi95OvMkaKhFRvEMvFLMPA_O1DnFscR",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"edad\": 100\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{APIURL}}/formportfolio?id=eq.{{IDUSUARIO_EDIT}}",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "eq.{{IDUSUARIO_EDIT}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Patch form editar email válido",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 204\", function () {",
+                  "    pm.response.to.have.status(204);",
+                  "});",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "sb_secret_Fi95OvMkaKhFRvEMvFLMPA_O1DnFscR",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"email\": \"testedit@gmail.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{APIURL}}/formportfolio?id=eq.{{IDUSUARIO_EDIT}}",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "eq.{{IDUSUARIO_EDIT}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Patch form sin autenticación",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 401\", function () {",
+                  "    pm.response.to.have.status(401);",
+                  "});",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"nombre\": \"Test sin autenticación\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{APIURL}}/formportfolio?id=eq.{{IDUSUARIO_EDIT}}",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "eq.{{IDUSUARIO_EDIT}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Patch form editar nombre vacío",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 400\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "sb_secret_Fi95OvMkaKhFRvEMvFLMPA_O1DnFscR",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"nombre\":\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{APIURL}}/formportfolio?id=eq.{{IDUSUARIO_EDIT}}",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "eq.{{IDUSUARIO_EDIT}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Patch form editar email vacío",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 400\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "sb_secret_Fi95OvMkaKhFRvEMvFLMPA_O1DnFscR",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"motivo\": \n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{APIURL}}/formportfolio?id=eq.{{IDUSUARIO_EDIT}}",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "eq.{{IDUSUARIO_EDIT}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Patch form edad inválida",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 400\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "sb_secret_Fi95OvMkaKhFRvEMvFLMPA_O1DnFscR",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"edad\":3 \n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{APIURL}}/formportfolio?id=eq.{{IDUSUARIO_EDIT}}",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "eq.{{IDUSUARIO_EDIT}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Patch form restaurar usuario",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 204\", function () {",
+                  "    pm.response.to.have.status(204);",
+                  "});",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "sb_secret_Fi95OvMkaKhFRvEMvFLMPA_O1DnFscR",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"nombre\": \"maria\",\n\"email\": \"maria@yahoo.com\",\n\"motivo\": \"otros\",\n\"edad\": \"25\",\n\"mensaje\": \"mensaje de prueba\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{APIURL}}/formportfolio?id=eq.{{IDUSUARIO_EDIT}}",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "eq.{{IDUSUARIO_EDIT}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Post form",
+      "item": [
+        {
+          "name": "Post form todos los campos APITEST",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "sb_secret_Fi95OvMkaKhFRvEMvFLMPA_O1DnFscR",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"nombre\": \"apitest\",\n\"email\": \"apitest@gmail.com\",\n\"motivo\": \"otros\",\n\"edad\": 30,\n\"mensaje\": \"apitest post\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{APIURL}}/formportfolio",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Post form campos obligatorios APITESTOPCIONAL",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "sb_secret_Fi95OvMkaKhFRvEMvFLMPA_O1DnFscR",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"email\": \"apitestoptional@gmail.com\",\n\"motivo\": \"informacion\",\n\"mensaje\": \"apitestoptional\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{APIURL}}/formportfolio",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Post form sin autenticación",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 401\", function () {",
+                  "    pm.response.to.have.status(401);",
+                  "});",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"nombre\": \"sin autenticacion\",\n\"email\": \"sinautenticacion@gmail.com\",\n\"motivo\": \"sin autenticacion\",\n\"edad\": 20,\n\"mensaje\": \"sin autenticacion\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{APIURL}}/formportfolio",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Post form sin email obligatorio",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 400\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "sb_secret_Fi95OvMkaKhFRvEMvFLMPA_O1DnFscR",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"nombre\": \"apitest sin email\",\n\"motivo\": \"otros\",\n\"edad\": 30,\n\"mensaje\": \"apitest post\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{APIURL}}/formportfolio",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Post form sin asunto obligatorio",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 400\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "sb_secret_Fi95OvMkaKhFRvEMvFLMPA_O1DnFscR",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"nombre\": \"apitest sin motivo\",\n\"email\": \"apitest@gmail.com\",\n\"edad\": 30,\n\"mensaje\": \"apitest sin motivo\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{APIURL}}/formportfolio",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Post form sin mensaje obligatorio",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 400\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "sb_secret_Fi95OvMkaKhFRvEMvFLMPA_O1DnFscR",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"nombre\": \"apitest sin mensaje\",\n\"email\": \"apitestsinmensaje@gmail.com\",\n\"motivo\": \"otros\",\n\"edad\": 30\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{APIURL}}/formportfolio",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Delete form",
+      "item": [
+        {
+          "name": "Delete form nombre APITEST",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 204\", function () {",
+                  "    pm.response.to.have.status(204);",
+                  "});",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "sb_secret_Fi95OvMkaKhFRvEMvFLMPA_O1DnFscR",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{APIURL}}/formportfolio?nombre=eq.apitest",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ],
+              "query": [
+                {
+                  "key": "nombre",
+                  "value": "eq.apitest"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete form mensaje APITESTOPCIONAL",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 204\", function () {",
+                  "    pm.response.to.have.status(204);",
+                  "});",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "sb_secret_Fi95OvMkaKhFRvEMvFLMPA_O1DnFscR",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{APIURL}}/formportfolio?mensaje=eq.apitestoptional",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ],
+              "query": [
+                {
+                  "key": "mensaje",
+                  "value": "eq.apitestoptional"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete form sin autenticación",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 401\", function () {",
+                  "    pm.response.to.have.status(401);",
+                  "});",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{APIURL}}/formportfolio?nombre=eq.apitest",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ],
+              "query": [
+                {
+                  "key": "nombre",
+                  "value": "eq.apitest"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete form email vacio",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 400\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "sb_secret_Fi95OvMkaKhFRvEMvFLMPA_O1DnFscR",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{APIURL}}/formportfolio?email=",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ],
+              "query": [
+                {
+                  "key": "email",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete form asunto vacío",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 400\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "sb_secret_Fi95OvMkaKhFRvEMvFLMPA_O1DnFscR",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{APIURL}}/formportfolio?motivo=",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ],
+              "query": [
+                {
+                  "key": "motivo",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete form edad invalida",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"El codigo de respuesta es 400\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "pm.test(\"El tiempo de respuesta es menor a 2000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "sb_secret_Fi95OvMkaKhFRvEMvFLMPA_O1DnFscR",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{APIURL}}/formportfolio?edad=eq.veinte",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "formportfolio"
+              ],
+              "query": [
+                {
+                  "key": "edad",
+                  "value": "eq.veinte"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "value",
+        "value": "{{PASSWORD}}",
+        "type": "string"
+      },
+      {
+        "key": "key",
+        "value": "apikey",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}
